@@ -1,10 +1,18 @@
+//Created by T Borden March 27/2018
+//Menu2.java
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This class is to be used to create a simple question simple multiple
+ * choice questionnaire that allows the user to see there results as soon
+ * as the questionnaire is completed.
+ * @author T Borden
+ */
 public class Menu2
 {
-
+    //Instance varribles
     private String title;
     public ArrayList<QAndA> table = new ArrayList<>();
     public String choice = "Please choose the choice that best describes"
@@ -16,11 +24,18 @@ public class Menu2
         null);
     private int count = 0;
 
+    /**
+     * Default constructor.
+     */
     public Menu2()
     {
-        this("Empty Questionair");
+        this("Empty Questionnaire");
     }
 
+    /**
+     * One parameter constructor that takes in a given title.
+     * @param title
+     */
     public Menu2(String title)
     {
         this.title = title;
@@ -28,6 +43,15 @@ public class Menu2
 
     }
 
+    /**
+     * This method takes in the question, the three possible choices, and
+     * the correct answer.
+     * @param question
+     * @param c1
+     * @param c2
+     * @param c3
+     * @param ans
+     */
     public void addQuestion(
         String question,
         String c1,
@@ -51,6 +75,10 @@ public class Menu2
 
     }
 
+    /**
+     * This is a simple display method that shows all the questions in the
+     * the table.
+     */
     public void display()
     {
         System.out.println("\n" + this.title);
@@ -58,20 +86,29 @@ public class Menu2
         {
             System.out.println(table.get(i));
 
-            getAnwser(table.get(i).anwser);
+            getAnswer(table.get(i).answer);
         }
 
     }
 
+    /**
+     * This method finds how many questions are in the table.
+     * @return the table size
+     */
     public int len()
     {
         return table.size();
     }
 
-    private void getAnwser(String correct)
+    /**
+     * This method checks to see if the users answer is correct then,
+     * tallies their score.
+     * @param correct
+     */
+    private void getAnswer(String correct)
     {
         Scanner kbd = new Scanner(System.in);
-        System.out.print("Which anwser do think is best: ");
+        System.out.print("Which anwser do you think is best: ");
         String anwser = kbd.nextLine();
         if (correct == null)
         {
@@ -83,35 +120,57 @@ public class Menu2
         }
     }
 
+    /**
+     * This method returns the users score out of how many questions there
+     * are.
+     */
     public void score()
     {
         System.out.println("You scored " + count + "/" + len());
     }
 
+    /**
+     * This is a private class that is used to create the question and
+     * answer object.
+     */
     private class QAndA
     {
+        //Instance varibles
         private String question;
         private String choice1;
         private String choice2;
         private String choice3;
-        private String anwser;
+        private String answer;
 
+        /**
+         * This is the constructor that takes in the question, and three
+         * choices, and the answer.
+         * @param question
+         * @param choice1
+         * @param choice2
+         * @param choice3
+         * @param answer
+         */
         public QAndA(
             String question,
             String choice1,
             String choice2,
             String choice3,
-            String anwser
+            String answer
         )
         {
             this.question = question;
             this.choice1 = choice1;
             this.choice2 = choice2;
             this.choice3 = choice3;
-            this.anwser = anwser;
+            this.answer = answer;
 
         }
 
+        /**
+         * This overrides the object toString into proper format.
+         * @return
+         */
         public String toString()
         {
 
