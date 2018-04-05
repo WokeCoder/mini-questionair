@@ -10,7 +10,7 @@ import java.util.Scanner;
  * as the questionnaire is completed.
  * @author T Borden
  */
-public class Menu2
+public class Quiz
 {
     //Instance varribles
     private String title;
@@ -27,7 +27,7 @@ public class Menu2
     /**
      * Default constructor.
      */
-    public Menu2()
+    public Quiz()
     {
         this("Empty Questionnaire");
     }
@@ -36,7 +36,7 @@ public class Menu2
      * One parameter constructor that takes in a given title.
      * @param title
      */
-    public Menu2(String title)
+    public Quiz(String title)
     {
         this.title = title;
         table.add(stock);

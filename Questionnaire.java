@@ -10,12 +10,12 @@ public class Questionnaire
     public static void main(String[] args)
     {
         //Menu2 created with no parameters
-        Menu2 obj = new Menu2();
+        Quiz obj = new Quiz();
         obj.display();
         System.out.println();
 
         //Menu2 created with four question added
-        Menu2 math = new Menu2("The Simple Math Test");
+        Quiz math = new Quiz("The Simple Math Test");
         math.addQuestion(
             "What is 1 + 2 ?",
             "3",
